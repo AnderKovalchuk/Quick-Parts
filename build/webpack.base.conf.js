@@ -16,7 +16,7 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: `catalog/view/theme/QuickParts/assets/js/[name].[hash].js`,
+        filename: `./catalog/view/theme/QuickParts/assets/js/[name].[hash].js`,
         path: PATHS.dist
     },
     optimization: {
@@ -61,7 +61,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({       
-            filename: `catalog/view/theme/QuickParts/assets/stylesheet/main.css`,
+            filename: `./catalog/view/theme/QuickParts/assets/stylesheet/main.css`,
         }),
         new CopyWebpackPlugin([
             { 
@@ -70,11 +70,11 @@ module.exports = {
             },
             { 
                 from: `${PATHS.src}/${PATHS.assets}images`, 
-                to: `catalog/view/theme/QuickParts/assets/images` 
+                to: `/catalog/view/theme/QuickParts/assets/images` 
             },
             { 
                 from: `${PATHS.src}/${PATHS.assets}fonts`, 
-                to: `catalog/view/theme/QuickParts/assets/fonts/`
+                to: `/catalog/view/theme/QuickParts/assets/fonts/`
             }
         ]),
 
