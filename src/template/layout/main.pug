@@ -1,3 +1,5 @@
+include ../mixins/menu
+
 block variables
 
 doctype html
@@ -9,5 +11,6 @@ html(lang='ru')
         meta(name="viewport", content="width=device-width, initial-scale=1")
 
     body(class=pageClass)
+        include ../common/header
         main(class=mainContentClass)
             block main-content

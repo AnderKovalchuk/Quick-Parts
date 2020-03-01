@@ -1,0 +1,94 @@
+header.header
+    .top_line.wrapper
+        a(href="#")#menuToggle.v_only_mobile_visible
+            i.icon.icon_burger
+        .top_line_phone.v_mobile_hide
+            div 
+                i.icon.icon_phone
+                span +380976403206
+                i.icon.icon_angle.icon_angle_down
+        .top_line_logo
+            a(href="/")
+                figure
+                    img(src="/catalog/view/theme/QuickParts/assets/images/logo.svg", alt="")
+        .v_mobile_hide
+            form(action="/").header_search
+                input(type="text" placeholder="ПОИСК ТОВАРОВ")
+                i.icon.icon_search
+        i.icon.icon_cart.v_only_mobile_visible
+
+    .bottom_line
+        .wrapper
+            .bottom_line_mobile.v_desktop_hide                        
+                form(action="/").header_search
+                    input(type="text" placeholder="ПОИСК ТОВАРОВ")
+                    i.icon.icon_search
+                a(href="#")#menuClose 
+                    i.icon.icon_close
+            nav.bottom_line_nav
+                ul
+                    li.catalog
+                        a(href="#")
+                            i.icon.icon_burger_w
+                            span Каталог
+                        .catalog_menu.open
+                            ul 
+                                +menu-catalog-item('CUMMINS')
+                                    +menu-item('Головка блока цилиндров', '#')
+                                    +menu-item('Коленвал', '#')
+                                    +menu-item('Блок цилиндров', '#')
+                                    +menu-item('Распредвал', '#')
+                                    +menu-item('Поршневая группа', '#')
+                                    +menu-item('Турбокомпрессор', '#')
+                                    +menu-item('Охлаждение ДВС', '#')
+                                    +menu-item('Система смазки', '#')
+                                    +menu-item('ТНВД, ТННД', '#')
+                                    +menu-item('Прокладки ДВС', '#')
+                                +menu-catalog-item('DEUTZ')
+                                    +menu-item('Головка блока цилиндров', '#')
+                                    +menu-item('Охлаждение ДВС', '#')
+                                    +menu-item('Система смазки', '#')
+                                    +menu-item('ТНВД, ТННД', '#')
+                                    +menu-item('Прокладки ДВС', '#')
+                                +menu-catalog-item('PERKINS')
+                                    +menu-item('Охлаждение ДВС', '#')
+                                    +menu-item('Система смазки', '#')
+                                    +menu-item('ТНВД, ТННД', '#')
+                                    +menu-item('Прокладки ДВС', '#')
+                                +menu-catalog-item('CATERPILLAR')
+                                    +menu-item('Охлаждение ДВС', '#')
+                                    +menu-item('Система смазки', '#')
+                                    +menu-item('ТНВД, ТННД', '#')
+                                    +menu-item('Прокладки ДВС', '#')
+                                +menu-catalog-item('LIEBHERR')
+                                    +menu-item('Головка блока цилиндров', '#')
+                                    +menu-item('Коленвал', '#')
+                                    +menu-item('Блок цилиндров', '#')
+                                    +menu-item('Распредвал', '#')
+                                    +menu-item('Поршневая группа', '#')
+                                    +menu-item('Турбокомпрессор', '#')
+                                    +menu-item('Охлаждение ДВС', '#')
+                                    +menu-item('Система смазки', '#')
+                                    +menu-item('ТНВД, ТННД', '#')
+                                    +menu-item('Прокладки ДВС', '#')
+                                +menu-catalog-item('ZETOR')
+                                    +menu-item('Головка блока цилиндров', '#')
+                                    +menu-item('Коленвал', '#')
+                                    +menu-item('Блок цилиндров', '#')
+                                    +menu-item('Прокладки ДВС', '#')
+                                +menu-catalog-item('Фильтра, масла')
+                                +menu-catalog-item('Услуги')
+                                +menu-catalog-item('Разное')
+                    +menu-item('Главная')
+                    +menu-item('О нас')
+                    +menu-item('Контакты')
+                    +menu-item('Доставка и оплата')
+            .bottom_line_service
+                ul
+                    li 
+                        a(href="#")
+                            i.icon.icon_user_w
+                    li 
+                        a(href="#")
+                            i.icon.icon_cart_w
+

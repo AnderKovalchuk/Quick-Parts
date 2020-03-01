@@ -1,0 +1,200 @@
+
+$catalog-menu-size-DesktopWidth: 250px
+
+.header
+    font-family: $title-font
+    z-index: 20
+    .top_line
+        @include flex-horizontal-align
+        padding: 10px 0
+        color: $color-text-acsent
+        &_phone div
+            @include flex-horizontal-align
+        .icon_burger
+            width: 20px
+        .icon_cart
+            width: 20px
+        &_logo img
+            height: 50px
+            @media screen and (max-width: $tableWidth)
+                height: 40px
+            @media screen and (max-width: $phoneWidth)
+                height: 30px
+    &_search 
+        @include flex-horizontal-align
+        padding-left: 10px
+        border-bottom: 1px solid $color-text-acsent
+        input
+            border: none
+
+    .bottom_line
+        color: #fff
+        background-color: $color-acsent-second
+        @media screen and (max-width: $tableWidth) 
+            //display: none
+            max-width: 400px
+            width: 100%
+            position: fixed
+            top: 0
+            bottom: 0
+            overflow-y: auto
+            transform-origin: 0% 0%
+            transform: translate(-100%, 0)
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+            padding-bottom: 30px
+            &.active
+                transform: none
+            &_mobile
+                @include flex-horizontal-align
+                background-color: #fff
+                padding: 20px 15px 
+        > div 
+            @include flex-horizontal-align-adaptiv-tableWidth
+        a
+            text-decoration: none
+            color: $color-text-acsent
+
+        &_nav
+            @media screen and (max-width: $tableWidth)
+                background-color: $color-light-first
+            a
+                display: block
+                padding: 10px 20px
+                color: #ffffff 
+                @media screen and (max-width: $smDesktopWidth)
+                    padding: 10px 10px
+                @media screen and (max-width: $tableWidth)
+                    color: $color-text-acsent
+                    padding: 15px 30px
+            > ul
+                @include flex-horizontal-align-adaptiv-tableWidth
+            .catalog 
+                position: relative
+                &:hover .catalog_menu
+                    transform: scale(1, 1)
+                > a
+                    @include flex-horizontal-align
+                    padding: 15px
+                    background-color: $color-acsent-first
+                    width: $catalog-menu-size-DesktopWidth
+                    text-align: center
+                    span
+                        flex-basis: 100%
+                        padding: 0 10px                   
+                        text-transform: uppercase
+                    @media screen and (max-width: $smDesktopWidth)
+                        width: auto
+                        padding: 10px 10px
+                        text-align: left
+                    @media screen and (max-width: $tableWidth)
+                        background-color: $color-acsent-second
+                        color: #fff
+        &_service ul
+            @include flex-horizontal-align(space-around)
+            a
+                padding: 5px
+        
+    .catalog_menu
+        background-color: $color-light-first
+        position: absolute
+        width: $catalog-menu-size-DesktopWidth
+        @media screen and (min-width: $tableWidth)
+            transform-origin: 0 0
+            transform: scale(1, 0)
+            transition: transform 0.3s
+        @media screen and (max-width: $tableWidth)
+            width: 100%
+            position: relative
+            background-color: #fff
+            border-bottom: 1px solid $color-acsent-second
+        &.open
+            transform: none
+        li 
+            span
+                padding: 2px 15px
+                @include flex-horizontal-align(start)
+            a
+                width: 90%
+                color: $color-text-acsent
+            @media screen and (max-width: $tableWidth)
+                .icon_angle
+                    width: 20px
+                    padding: 0 5px
+                    transition: all 0.2s linear 0s
+                    &.active
+                        transform: rotate(90deg)
+            @media screen and (min-width: $tableWidth)
+                &:hover
+                    background-color: $color-light-second
+                &:hover ul
+                    display: flex
+        &_sub
+            position: absolute
+            display: none
+            top: 0
+            bottom: 0
+            left: $catalog-menu-size-DesktopWidth
+            flex-direction: column
+            flex-wrap: wrap
+            background-color: $color-light-second
+            @media screen and (max-width: $tableWidth)
+                display: block
+                width: 100%
+                height: 0     
+                margin-bottom: 10px
+                position: relative
+                left: 0
+                background-color: transparent
+                border-bottom: 1px solid $color-text-acsent
+                transform-origin: 0 0
+                transform: scale(1, 0)
+                transition: transform 0.5s
+                &.active
+                    height: auto
+                    padding: 0 50px 20px 50px
+                    transform: scale(1, 1)
+            li a
+                display: block
+                width: $catalog-menu-size-DesktopWidth
+                padding: 10px 15px
+                font-size: 0.9em
+                &:hover
+                    text-decoration: underline
+
+#menuToggle-2
+    display: block
+    //position: relative
+    user-select: none
+    text-decoration: none
+    color: $color-text-acsent
+    transition: color 0.3s ease
+    z-index: 10
+    @media screen and (min-width: $tableWidth)
+        display: none
+    span
+        display: block
+        width: 30px
+        height: 4px
+        //position: relative       
+        background: $color-text-acsent
+        border-radius: 3px    
+        z-index: 1        
+        //transform-origin: 4px 0px   
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+        &:first-child
+            transform-origin: 0% 0%
+        &:nth-child(2)
+            margin: 5px 0
+        &:nth-child(3)
+            transform-origin: 0% 100%
+    &.active 
+        span
+            background: $color-text-acsent
+            &:nth-child(1)
+                transform: rotate(45deg) translate(-1px, 0px)
+            &:nth-child(2)
+                opacity: 0
+                transform: rotate(0deg) scale(0.2, 0.2)
+            &:nth-child(3)
+                transform: rotate(-45deg) translate(-1px, 0px)
+#menuClose
