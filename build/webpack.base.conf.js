@@ -70,11 +70,11 @@ module.exports = {
             },
             { 
                 from: `${PATHS.src}/${PATHS.assets}images`, 
-                to: `/catalog/view/theme/QuickParts/assets/images` 
+                to: `${PATHS.dist}/catalog/view/theme/QuickParts/assets/images` 
             },
             { 
-                from: `${PATHS.src}/${PATHS.assets}fonts`, 
-                to: `/catalog/view/theme/QuickParts/assets/fonts/`
+                from: `${PATHS.src}/assets/fonts/`, 
+                to: `${PATHS.dist}/catalog/view/theme/QuickParts/assets/fonts`
             }
         ]),
 

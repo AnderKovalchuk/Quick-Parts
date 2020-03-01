@@ -1,0 +1,19 @@
+mixin menu-item(text, link='#')
+    li(class!=attributes.class)
+        a(href= link)= text
+        if block
+            block
+
+mixin menu-catalog-item(text, img='', link='#')
+    li
+        span
+            if img==''
+                img(src="/assets/img/detal.svg", alt="")
+            else
+                img(src= img, alt="")
+            a(href= link)
+                span= text
+            if block
+                i.icon.icon_angle.catalog_menu_sub_toggle
+        ul.catalog_menu_sub
+            block

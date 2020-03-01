@@ -1,12 +1,22 @@
+@import "utils/mixins";
+
 // - Импорт переменных
 @import "base/vars";
 // - Сбросить стандартные стили 
 @import "base/reset";
 // - Настройки шрифтов
 @import "base/fonts";
+// - Общее стили для всех страниц 
+@import "base/main";
     
+
+@import "common/header";
+
+
 .alert, .warning
     ul, p
         margin-right: 0
         margin-left: 0
         padding-bottom: 0
+
+@import "utils/icon";

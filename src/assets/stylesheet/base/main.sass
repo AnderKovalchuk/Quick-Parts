@@ -1,0 +1,41 @@
+
+body
+    min-width: 320px
+    max-width: 1920px
+    margin: 0 auto
+    color: $color-text-main
+    font-family: $main-font
+    font-size: 16px
+    font-weight: normal
+    line-height: normal
+
+h1, h2, h3, h4, h5, h6
+    font-family: $title-font
+    color: $color-text-acsent 
+
+.wrapper
+    width: 80%
+    margin: 0 auto
+    @media screen and (max-width: $smDesktopWidth)
+        width: 85%
+    @media screen and (max-width: $tableWidth)
+        width: 90%
+    @media screen and (max-width: $phoneWidth)
+        width: 95%
+
+.v
+    &_only_mobile_visible
+        display: none
+        @media screen and (max-width: $tableWidth)
+            display: block
+    &_mobile_hide
+        @media screen and (max-width: $tableWidth)
+            display: none
+    &_desktop_hide
+        display: none
+.overlay
+    background-color: $color-text-acsent
+    position: fixed
+    width: 100%
+    height: 100%
+    opacity: 0.6
