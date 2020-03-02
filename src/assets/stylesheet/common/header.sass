@@ -29,6 +29,7 @@ $catalog-menu-size-DesktopWidth: 250px
     .bottom_line
         color: #fff
         background-color: $color-acsent-second
+        z-index: 50
         @media screen and (max-width: $tableWidth) 
             //display: none
             max-width: 400px
@@ -97,6 +98,7 @@ $catalog-menu-size-DesktopWidth: 250px
         background-color: $color-light-first
         position: absolute
         width: $catalog-menu-size-DesktopWidth
+        z-index: 50
         @media screen and (min-width: $tableWidth)
             transform-origin: 0 0
             transform: scale(1, 0)
@@ -107,7 +109,8 @@ $catalog-menu-size-DesktopWidth: 250px
             background-color: #fff
             border-bottom: 1px solid $color-acsent-second
         &.open
-            transform: none
+            @media screen and (min-width: $smDesktopWidth)
+                transform: none
 
         span
             padding: 2px 15px
