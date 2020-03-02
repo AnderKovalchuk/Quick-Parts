@@ -18,8 +18,7 @@ $catalog-menu-size-DesktopWidth: 250px
             height: 50px
             @media screen and (max-width: $tableWidth)
                 height: 40px
-            @media screen and (max-width: $phoneWidth)
-                height: 30px
+
     &_search 
         @include flex-horizontal-align
         padding-left: 10px
@@ -30,6 +29,7 @@ $catalog-menu-size-DesktopWidth: 250px
     .bottom_line
         color: #fff
         background-color: $color-acsent-second
+        z-index: 50
         @media screen and (max-width: $tableWidth) 
             //display: none
             max-width: 400px
@@ -47,7 +47,7 @@ $catalog-menu-size-DesktopWidth: 250px
             &_mobile
                 @include flex-horizontal-align
                 background-color: #fff
-                padding: 20px 15px 
+                padding: 10px
         > div 
             @include flex-horizontal-align-adaptiv-tableWidth
         a
@@ -65,7 +65,7 @@ $catalog-menu-size-DesktopWidth: 250px
                     padding: 10px 10px
                 @media screen and (max-width: $tableWidth)
                     color: $color-text-acsent
-                    padding: 15px 30px
+                    padding: 10px 30px
             > ul
                 @include flex-horizontal-align-adaptiv-tableWidth
             .catalog 
@@ -98,6 +98,7 @@ $catalog-menu-size-DesktopWidth: 250px
         background-color: $color-light-first
         position: absolute
         width: $catalog-menu-size-DesktopWidth
+        z-index: 50
         @media screen and (min-width: $tableWidth)
             transform-origin: 0 0
             transform: scale(1, 0)
@@ -108,22 +109,24 @@ $catalog-menu-size-DesktopWidth: 250px
             background-color: #fff
             border-bottom: 1px solid $color-acsent-second
         &.open
-            transform: none
-        li 
-            span
-                padding: 2px 15px
-                @include flex-horizontal-align(start)
+            @media screen and (min-width: $smDesktopWidth)
+                transform: none
+
+        span
+            padding: 2px 15px
+            @include flex-horizontal-align(start)
+        a
+            width: 90%
+            color: $color-text-acsent
+        @media screen and (max-width: $tableWidth)
+            .icon_angle
+                transition: all 0.2s linear 0s
+                &.active
+                    transform: rotate(90deg)
             a
-                width: 90%
-                color: $color-text-acsent
-            @media screen and (max-width: $tableWidth)
-                .icon_angle
-                    width: 20px
-                    padding: 0 5px
-                    transition: all 0.2s linear 0s
-                    &.active
-                        transform: rotate(90deg)
-            @media screen and (min-width: $tableWidth)
+                padding: 5px 0px
+        @media screen and (min-width: $tableWidth)
+            li
                 &:hover
                     background-color: $color-light-second
                 &:hover ul
@@ -138,21 +141,16 @@ $catalog-menu-size-DesktopWidth: 250px
             flex-wrap: wrap
             background-color: $color-light-second
             @media screen and (max-width: $tableWidth)
-                display: block
-                width: 100%
-                height: 0     
+                width: 100%    
                 margin-bottom: 10px
                 position: relative
                 left: 0
+                padding: 0 0 10px 30px
                 background-color: transparent
-                border-bottom: 1px solid $color-text-acsent
-                transform-origin: 0 0
-                transform: scale(1, 0)
-                transition: transform 0.5s
+                
+                border-bottom: 1px solid $color-acsent-second
                 &.active
-                    height: auto
-                    padding: 0 50px 20px 50px
-                    transform: scale(1, 1)
+                    display: block
             li a
                 display: block
                 width: $catalog-menu-size-DesktopWidth
