@@ -5,15 +5,15 @@ mixin menu-item(text, link='#')
             block
 
 mixin menu-catalog-item(text, img='', link='#')
-    li
+    li.catalog-menu__item
         span
             if img==''
-                img(src="/assets/img/detal.svg", alt="")
+                img(src="/assets/img/detal.svg", alt="").catalog-menu__icon
             else
                 img(src= img, alt="")
-            a(href= link)
-                span= text
+            a(href= link).catalog-menu__link= text
             if block
-                i.icon.icon_angle.catalog_menu_sub_toggle
-        ul.catalog_menu_sub
-            block
+                i.catalog-menu__toggle
+        if block
+            ul.catalog-menu__sub-menu
+                block
