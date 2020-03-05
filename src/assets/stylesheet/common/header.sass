@@ -102,8 +102,10 @@ $catalog-menu-size-DesktopWidth: 250px
     position: absolute
     width: $catalog-menu-size-DesktopWidth
     background-color: $color-light-first
+    z-index: 51
     @media screen and (max-width: $tableWidth)
         position: relative
+        display: block
         width: 100%
         background-color: #fff
     &__item
@@ -159,7 +161,8 @@ $catalog-menu-size-DesktopWidth: 250px
             margin-bottom: 10px
 
     &--open
-        display: block
+        @media screen and (min-width: $smDesktopWidth)
+            display: block
 
 .header-phone
     position: relative
