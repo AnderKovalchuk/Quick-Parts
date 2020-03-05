@@ -1,0 +1,54 @@
+.product-card
+    border: 1px solid $color-light-second
+    max-width: 400px
+    display: flex
+    flex-direction: column
+    > a 
+        display: flex
+        flex-direction: column
+        height: 100% 
+        font-family: $title-font 
+        color: $color-text-acsent 
+        text-decoration: none
+    &__image
+        img
+            width: 100%
+            max-height: 250px
+            object-fit: cover
+            @media screen and (max-width: $phoneWidth)
+                max-height: 200px
+    &__title
+        margin: auto 0
+        padding: 10px
+        font-weight: normal
+        font-size: 1.2em
+        @media screen and (max-width: $smDesktopWidth)
+            font-size: 1em
+    &__information
+        @include flex-horizontal-align
+        padding: 10px 0
+        margin: 0 10px
+        border-bottom: 1px solid $color-light-second
+    &__price
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-end 
+        &--old
+            color: $color-light-third
+            margin-right: 15px     
+            text-decoration: line-through $color-acsent-first
+        &--current
+            font-weight: bold
+            font-size: 1.3em
+        &--unknown
+            font-weight: bold
+            font-size: 1.1em
+    &__availability
+        text-align: right
+        margin-left: auto
+        flex-shrink: 0
+    &__action
+        @include flex-horizontal-align
+        padding: 20px 10px
+        > *
+            width: 48%
