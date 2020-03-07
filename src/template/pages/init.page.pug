@@ -1,18 +1,29 @@
-extends ../layout/main
+include ../mixins/menu
+include ../mixins/product-card
+include ../common/bread-crumbs
 
-block variables
-    - var title = 'Element page';
-    - var pageClass = '';
-    - var mainContentClass = 'wrapper';
+doctype html
+html(lang='ru')
+    head
+        meta(charset='utf-8')
+        title #{title}
+        block head
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+    body
+        include ../common/header/header--open-menu
+            block banner
+                section.wrapper
+                    .home-page-banner
+                        .home-page-banner__slide-inner
+                            .home-page-banner__content
+                                h3.home-page-banner__title Запчасти на <br> двигатель
+                            figure.home-page-banner__image
+                                img(src="/catalog/view/theme/QuickParts/assets/images/home_baner_1.jpg", alt="")
+        
+        div(style='height: 200px')
 
-block head
-    style
+        include ../common/header/header
+        +bread-crumbs('', '')
 
-block  main-content
-    h1 Start
-
-    .b_content
-        h2 Продажа запчастей к двигателям
-        p Cummins, Perkins, Deutz, Zetor, Liaz, Tatra, Yanmar, John Deere, CAT, Komatsu, Case, XCMG, Isuzu, Andoria, JC
-        h2 Ремонт двигателей(ДВС).
-        p Проводим диагностику ДВС, согласовываем с клиентом замену изношенных деталей, качество применяемых запчастей (оригинал/аналог), ремонт, пуск двигателя. После ремонта двигателя проводится его пуск в цеху. Видео с первого пуска двигателя можно увидеть на нашем канале в Youtube.
+        div(style='height: 700px')
+        include ../common/footer

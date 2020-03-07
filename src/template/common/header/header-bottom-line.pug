@@ -1,0 +1,31 @@
+mixin header-bottom-line(open= false)
+    .header__bottom-line
+        .wrapper
+            .header__mobile-addition-menu                      
+                form(action="/search" method="get" id="search").search-field
+                    input(type="text" placeholder="ПОИСК ТОВАРОВ").search-field__input
+                a(href="#").header__mobile-menu-close 
+            nav
+                ul.header__navigation-list
+                    li.header__navigation-list--catalog
+                        a(href="#") Каталог
+                        if open
+                            .catalog-menu.catalog-menu--open
+                                include ./header-catalog-menu
+                        else
+                            .catalog-menu
+                                include ./header-catalog-menu
+                    +menu-item('Главная')
+                    +menu-item('О нас')
+                    +menu-item('Контакты')
+                    +menu-item('Доставка и оплата')
+            ul.header-service
+                li.header-service__user-account
+                    a(href="#")
+                        span Войти
+                li.header-service__cart
+                    a(href="#")
+            ul.header__mobile-phone
+                li +380636986753
+                li +380636986753
+                li +380636986753

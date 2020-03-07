@@ -1,0 +1,28 @@
+mixin header-top-line
+    if open
+        h1
+    .header__top-line.wrapper
+        a(href="#").header__menu-toggle
+        .header__phone
+            .header-phone
+                i.icon__phone.icon__phone--red
+                span.header-phone__number +380636986753
+                i.icon__angle.icon__angle--down
+                ul.header-phone__dropdown
+                    li
+                        i.icon__phone.icon__phone--red
+                        span.header-phone__number +380976403206
+                    li
+                        i.icon__phone.icon__phone--red
+                        span.header-phone__number +380976403206
+                    li
+                        i.icon__phone.icon__phone--red
+                        span.header-phone__number +380976403206
+        .header__logo
+            a(href="/")
+                figure
+                    img(src="/catalog/view/theme/QuickParts/assets/images/logo.svg", alt="")
+        .header__search
+            form(action="/search" method="get" id="search").search-field
+                input(type="text" placeholder="ПОИСК ТОВАРОВ").search-field__input
+        a(href="#").header__cart
