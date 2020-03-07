@@ -1,4 +1,5 @@
 include ../mixins/menu
+include ../mixins/product-card
 
 block variables
 
@@ -12,6 +13,14 @@ html(lang='ru')
 
     body(class=pageClass)
         include ../common/header
+        section.wrapper
+            .home-page-banner
+                .home-page-banner__slide-inner
+                    .home-page-banner__content
+                        h3.home-page-banner__title Запчасти на <br> двигатель
+                    figure.home-page-banner__image
+                        img(src="/catalog/view/theme/QuickParts/assets/images/home_baner_1.jpg", alt="")
+
         main(class=mainContentClass)
             block main-content
         section(style='height: 400px')

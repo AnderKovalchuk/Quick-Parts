@@ -1,0 +1,26 @@
+mixin product-card(title, price='', img='', oldPrice='', availability='')
+    .product-card
+        a(href="#")
+            figure.product-card__image
+                if img==''
+                    img(src="/assets/img/product_img_1.jpg", alt="")
+                else
+                    img(src= img, alt="")
+            h3.product-card__title= title
+            .product-card__information
+                span.product-card__price
+                    if oldPrice!=''
+                        span.product-card__price--old= oldPrice
+
+                    if price==''
+                        span.product-card__price--unknown Уточняйте
+                    else
+                        span.product-card__price--current= price
+
+                if availability==''
+                    span.product-card__availability Есть в наличии
+                else
+                    span.product-card__availability Нет в наличии
+        .product-card__action
+            button.button.button--active В корзину
+            button.button.button--auxiliary В 1 клик
