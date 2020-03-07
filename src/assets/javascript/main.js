@@ -32,8 +32,21 @@ window.addEventListener('load', () => {
         });
 
         function toggleMore(el) {
-            el.classList.toggle('catalog-menu__toggle--open');
+            el.classList.toggle('toggle-menu--open');
             el.parentElement.nextElementSibling.classList.toggle('catalog-menu__sub-menu--open');
+        };
+
+        const fdown = d.querySelectorAll('.footer__menu-toggle');
+
+        fdown.forEach(el => {
+            el.addEventListener('click', (event) => {
+                toggleFooterMore(el);
+            });
+        });
+
+        function toggleFooterMore(el) {
+            el.classList.toggle('toggle-menu--open');
+            el.parentElement.nextElementSibling.classList.toggle('footer__info-block--open');
         };
 
     }());

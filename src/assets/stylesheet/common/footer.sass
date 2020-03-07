@@ -1,0 +1,50 @@
+.footer
+    //font-family: $title-font
+    color: #ffffff
+    background-color: $color-acsent-second
+    &__top-line
+        @include flex-horizontal-align-adaptiv-tableWidth
+        align-items: start
+        padding: 30px 0
+    &__info-column
+        flex-basis: 25%
+        padding: 0 20px
+
+    &__info-block
+        @media screen and (max-width: $tableWidth)
+            display: none
+        a
+            display: block
+            padding: 5px 0
+            color: #ffffff
+            text-decoration: none
+            &:hover
+                text-decoration: underline
+        p 
+            padding: 5px 0
+            span
+                font-weight: bold
+                letter-spacing: 1px
+        &--open
+            display: block
+    &__column-title
+        display: flex
+        @media screen and (max-width: $tableWidth)
+            margin-bottom: 5px
+            padding: 5px 0
+            border-bottom: 1px solid #ffffff
+
+        h3
+            color: #fff
+            margin-bottom: 5px
+            margin-right: auto
+    &__menu-toggle
+        display: none
+        width: 20px
+        padding: 5px
+        @media screen and (max-width: $tableWidth)
+            display: inline-block
+    &__copywrite
+        padding: 20px 0
+        text-align: center
+        border-top: 1px solid #fff
