@@ -13,7 +13,7 @@ mixin menu-catalog-item(text, img='', link='#')
                 img(src= img, alt="")
             a(href= link).catalog-menu__link= text
             if block
-                i.catalog-menu__toggle
+                i.toggle-menu.toggle-menu--black.catalog-menu__toggle
         if block
             ul.catalog-menu__sub-menu
                 block
