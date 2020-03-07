@@ -1,0 +1,14 @@
+mixin bread-crumbs()
+    .wrapper.bread-crumbs
+        ul.bread-crumbs__list
+            +bread-crumbs-item('Главная')
+            +bread-crumbs-item('Commins')
+            +bread-crumbs-item('Головка блока цилиндров')
+            +bread-crumbs-item('3800617 Сальник компрессораCummins N14', false)
+
+
+mixin bread-crumbs-item(text, icon= true, link= '#')
+    li.bread-crumbs__item
+        a(class!=attributes.class href= link)= text
+        if icon
+            i.bread-crumbs__icon

@@ -11,6 +11,8 @@ $catalog-menu-size-DesktopWidth: 250px
         @include flex-horizontal-align
         padding: 10px 0
         color: $color-text-acsent
+        @media screen and (max-width: $tableWidth)
+            border-bottom: 1px solid $color-text-acsent 
     &__menu-toggle
         display: none
         content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNiAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMTcuMzMzM0gyNlYxNC40NDQ0SDBWMTcuMzMzM1pNMCAxMC4xMTExSDI2VjcuMjIyMjJIMFYxMC4xMTExWk0wIDBWMi44ODg4OUgyNlYwSDBaIiBmaWxsPSIjMzMzMzMzIi8+Cjwvc3ZnPgo=')
@@ -88,6 +90,10 @@ $catalog-menu-size-DesktopWidth: 250px
                     background-color: #fff
                     border-top: 1px solid $color-text-acsent
                     border-bottom: 1px solid $color-text-acsent
+            &:hover
+                @media screen and (min-width: $tableWidth)
+                    .catalog-menu
+                        display: block
     &__mobile-phone
         display: none
         color: $color-text-acsent
