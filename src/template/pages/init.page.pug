@@ -1,6 +1,6 @@
 include ../mixins/menu
 include ../mixins/product-card
-
+include ../common/bread-crumbs
 
 doctype html
 html(lang='ru')
@@ -23,6 +23,7 @@ html(lang='ru')
         div(style='height: 200px')
 
         include ../common/header/header
+        +bread-crumbs('', '')
 
         div(style='height: 700px')
         include ../common/footer
