@@ -4,7 +4,9 @@
   "description": "Website for the sale of engine parts",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --host 10.0.1.40 --open --config ./build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --host localhost --open --config ./build/webpack.dev.conf.js",
+    "devWork": "webpack-dev-server --host 10.0.1.40 --open --config ./build/webpack.dev.conf.js",
+    "devHome": "webpack-dev-server --host 192.168.0.105 --open --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js"
   },
   "author": "Ander Kovalchuk",

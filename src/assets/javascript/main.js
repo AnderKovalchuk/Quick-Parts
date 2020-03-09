@@ -50,4 +50,77 @@ window.addEventListener('load', () => {
         };
 
     }());
+
+    /* Product Tub Menu */
+    (function () {
+        if(w.matchMedia('(max-width: 768px)').matches || !d.querySelector('.prodcard__tab-content'))
+            return
+
+        let tabDescription = d.querySelector('.prodcard__tab-description'),
+            tabReviews = d.querySelector('.prodcard__tab-reviews'),
+            reviews = d.querySelector('.prodcard__reviews'),
+            description = d.querySelector('.prodcard__description');
+        reviews.style.display = "none";
+
+        tabDescription.addEventListener('click', (event) => {
+            if(tabDescription.classList.contains('prodcard__tab-content--active'))
+                return
+            reviews.style.display = "none";
+            description.style.display = "block";
+            tabDescription.classList.toggle('prodcard__tab-content--active');
+            tabReviews.classList.toggle('prodcard__tab-content--active');
+        });
+        tabReviews.addEventListener('click', (event) => {
+            if(tabReviews.classList.contains('prodcard__tab-content--active'))
+                return
+            reviews.style.display = "block";
+            description.style.display = "none";
+            tabDescription.classList.toggle('prodcard__tab-content--active');
+            tabReviews.classList.toggle('prodcard__tab-content--active');
+        });
+        
+        /*let tabDescription = d.querySelector('.prodcard__js--tab-description'),
+            tabReviews = d.querySelector('.prodcard__js--tab-reviews'),
+            contentDescription = d.querySelector('.prodcard__description'),
+            contentReviews = d.querySelector('.prodcard__reviews');
+        
+        function toggleProductTab() {
+            tabReviews.classList.toggle('prodcard__tub-item--active');
+            tabDescription.classList.toggle('prodcard__tub-item--active');
+            contentDescription.classList.toggle('--active');
+            contentReviews.classList.toggle('--active');
+        }
+
+        tabDescription.addEventListener('click', toggleProductTab);
+        tabReviews.addEventListener('click', toggleProductTab);*/
+    }());
+
+    (function () {
+        let contentTongle = d.querySelectorAll('.prodcard__content-header');
+        contentTongle.forEach(el => {
+            el.addEventListener('click', (event) => {
+                el.nextElementSibling.classList.toggle('prodcard__content-iner--open');
+                el.querySelector('.toggle-menu').classList.toggle('toggle-menu--open')
+            });
+        });
+    }());
+
+    (function (){
+        let buttonMinus = d.querySelector('.quantity__button--minus'),
+            buttonPlus = d.querySelector('.quantity__button--plus'),
+            quantity = d.querySelector('.quantity__input');
+        
+        buttonMinus.addEventListener('click', (event) => {
+            if(quantity.value <= 1)
+                quantity.value = 1;
+            else
+                quantity.value = quantity.value - 1;
+        });
+        buttonPlus.addEventListener('click', (event) => {
+            if(quantity.value >= 50)
+                quantity.value = 50;
+            else
+                quantity.value =  parseInt(quantity.value) + 1;
+        });
+    }());
 });

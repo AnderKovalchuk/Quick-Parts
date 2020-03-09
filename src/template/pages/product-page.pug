@@ -1,0 +1,165 @@
+extends ../layout/page
+
+block variables
+    - var title = 'Product page';
+    - var pageClass = 'product-';
+    - var mainContentClass = 'wrapper';
+
+block before-content
+    +bread-crumbs
+
+block  main-content
+    .prodcard__iner
+        p.prodcard__product-name.prodcard__product-name--mobile 3800617 Сальник компрессора Cummins N14
+        .prodcard__product-image-block
+            figure
+                img(src="/assets/img/product_img_2.jpg", alt="")
+        .prodcard__buy-information-block
+            h1.prodcard__product-name 3800617 Сальник компрессора Cummins N14 
+            .prodcard__availability Есть в наличии
+            ul.prodcard__characteristics
+                li 
+                    span Производители: 
+                    a(href="#") Cummins
+                li #[span Каталожный номер:] Зарегистрируйтесь чтобы увидеть
+            .prodcard__cost
+                span.prodcard__price.prodcard__price--old 2897 грн
+                span.prodcard__price.prodcard__price--current 2897 грн
+            .prodcard__action
+                .quantity.prodcard__quantity
+                    span.quantity__button.quantity__button--minus
+                    input(type="number" id="input-quantity" min="1" max="50" placeholder="1" value="1").quantity__input
+                    span.quantity__button.quantity__button--plus
+                button.button.button--active В корзину
+                button.button.button--auxiliary В 1 клик
+        .prodcard__about-product-block
+            ul.prodcard__tab-content
+                li.prodcard__title-content.prodcard__tab-description.prodcard__tab-content--active Описание
+                li.prodcard__title-content.prodcard__tab-reviews.prodcard__tab-content Отзывов(0)
+            .prodcart_tab-content
+                section.content.prodcard__description
+                    header.prodcard__content-header.prodcard__content-header--mobile-only
+                        h2.prodcard__title-content Описание
+                        i.toggle-menu.toggle-menu--black.prodcard__toggle
+                    .prodcard__content-iner
+                        p Топливный картридж (фильтр-вставка) ТМ Fleetguard FS19925. Используется на китайских двигателях ISF2.8 для ГАЗ-3302, Бизнес, Соболь, Некст(NEXT), Валдай.
+                        p Фильтр имеет габаритные размеры В-Д-д: 124-81-24/0"
+                        p Оригинальные фильтра имеют рельефный логотип Fleetguard и дата код.
+                        p Характеристики оригинальных фильтров:
+                        ul
+                            li ― рельефный логотип и дата код на верхней поверхности;
+                            li ― крайние плисы фильтрующего материала проклеены с ярок выраженными границами склейки;
+                            li ― торцевая пластина является плоской, не имеет плеча;
+                            li ― на выпускном отверстии резиновое уплотнительное кольцо.
+                        p Из расходных запчастей к двигателям ISF2.8 покупают ролики обводные ― верхний, промежуточный; механизм натяжения; ремень генератора и помпы; насос охлаждающей жидкости; полный набор прокладок.
+                        p На любую спец-, сельхоз- технику подбираем фильтра и расходные материалы.
+                        p В наличии оригинальные фильтра и их аналоги известных брендов.
+                        p Также имеются запчасти к двигателям Камминс/Кумминз ― консультация, подбор. 
+                        p Ремонт техники, двигателей, КПП, топливной аппаратуры (ТНВД, ТННД), форсунок, распылителей.
+                section.reviews.prodcard__reviews
+                    header.prodcard__content-header.prodcard__content-header--mobile-only
+                        h2.prodcard__title-content Отзывы
+                        i.toggle-menu.toggle-menu--black.prodcard__toggle
+                    .prodcard__content-iner.prodcard__content-iner
+                        .reviews__item
+                            header.reviews__header
+                                h5.reviews__peple-name Евген
+                                span.reviews__date 22.01.2020
+                            .content.reviews__content
+                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        .reviews__item
+                            header.reviews__header
+                                h5.reviews__peple-name Евген
+                                span.reviews__date 22.01.2020
+                            .content.reviews__content
+                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+        section.prodcard__property-block
+            header.prodcard__content-header
+                h2.prodcard__title-content Характеристики
+                i.toggle-menu.toggle-menu--black.prodcard__toggle.toggle-menu
+            .prodcard__content-iner.prodcard__content-iner
+                +product-property('Тип техники', 'Спецтехника')
+                +product-property('Тип запчасти', '	Аналог')
+                +product-property('Производитель', 'KMP Brand')
+                +product-property('Страна производитель', 'Великобритания')
+                +product-property('Код запчасти', '3800617')
+                +product-property('Состояние', 'Новое')
+
+
+    .prodcard__iner
+        p.prodcard__product-name.prodcard__product-name--mobile 3800617 Сальник компрессора Cummins N14
+        .prodcard__product-image-block
+            figure
+                img(src="/assets/img/product_img_2.jpg", alt="")
+        .prodcard__buy-information-block
+            h1.prodcard__product-name 3800617 Сальник компрессора Cummins N14 
+            .prodcard__availability.prodcard__availability--out-of-stock Нет в наличии
+            ul.prodcard__characteristics
+                li 
+                    span Производители: 
+                    a(href="#") Cummins
+                li #[span Каталожный номер:] Зарегистрируйтесь чтобы увидеть
+            .prodcard__cost
+                span.prodcard__price.prodcard__price--unknown Цену Уточняйте
+        .prodcard__about-product-block
+            ul.prodcard__tab-content
+                li.prodcard__title-content.prodcard__tab-description.prodcard__tab-content--active Описание
+                li.prodcard__title-content.prodcard__tab-reviews.prodcard__tab-content Отзывов(0)
+            .prodcart_tab-content
+                section.content.prodcard__description
+                    header.prodcard__content-header.prodcard__content-header--mobile-only
+                        h2.prodcard__title-content Описание
+                        i.toggle-menu.toggle-menu--black.prodcard__toggle
+                    .prodcard__content-iner
+                        p Топливный картридж (фильтр-вставка) ТМ Fleetguard FS19925. Используется на китайских двигателях ISF2.8 для ГАЗ-3302, Бизнес, Соболь, Некст(NEXT), Валдай.
+                        p Фильтр имеет габаритные размеры В-Д-д: 124-81-24/0"
+                        p Оригинальные фильтра имеют рельефный логотип Fleetguard и дата код.
+                        p Характеристики оригинальных фильтров:
+                        ul
+                            li ― рельефный логотип и дата код на верхней поверхности;
+                            li ― крайние плисы фильтрующего материала проклеены с ярок выраженными границами склейки;
+                            li ― торцевая пластина является плоской, не имеет плеча;
+                            li ― на выпускном отверстии резиновое уплотнительное кольцо.
+                        p Из расходных запчастей к двигателям ISF2.8 покупают ролики обводные ― верхний, промежуточный; механизм натяжения; ремень генератора и помпы; насос охлаждающей жидкости; полный набор прокладок.
+                        p На любую спец-, сельхоз- технику подбираем фильтра и расходные материалы.
+                        p В наличии оригинальные фильтра и их аналоги известных брендов.
+                        p Также имеются запчасти к двигателям Камминс/Кумминз ― консультация, подбор. 
+                        p Ремонт техники, двигателей, КПП, топливной аппаратуры (ТНВД, ТННД), форсунок, распылителей.
+                section.reviews.prodcard__reviews
+                    header.prodcard__content-header.prodcard__content-header--mobile-only
+                        h2.prodcard__title-content Отзывы
+                        i.toggle-menu.toggle-menu--black.prodcard__toggle
+                    .prodcard__content-iner.prodcard__content-iner
+                        .reviews__item
+                            header.reviews__header
+                                h5.reviews__peple-name Евген
+                                span.reviews__date 22.01.2020
+                            .content.reviews__content
+                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        .reviews__item
+                            header.reviews__header
+                                h5.reviews__peple-name Евген
+                                span.reviews__date 22.01.2020
+                            .content.reviews__content
+                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+        section.prodcard__property-block
+            header.prodcard__content-header
+                h2.prodcard__title-content Характеристики
+                i.toggle-menu.toggle-menu--black.prodcard__toggle.toggle-menu
+            .prodcard__content-iner.prodcard__content-iner
+                +product-property('Тип техники', 'Спецтехника')
+                +product-property('Тип запчасти', '	Аналог')
+                +product-property('Производитель', 'KMP Brand')
+                +product-property('Страна производитель', 'Великобритания')
+                +product-property('Код запчасти', '3800617')
+                +product-property('Состояние', 'Новое')
+
+
+
+mixin product-property(name, value)
+    .prodcard__property-item
+        p= name 
+        span= value
+
