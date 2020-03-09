@@ -1,0 +1,22 @@
+include ../mixins/menu
+include ../mixins/product-card
+include ../common/bread-crumbs
+
+block variables
+
+doctype html
+html(lang='ru')
+    head
+        meta(charset='utf-8')
+        title #{title}
+        block head
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    body(class=pageClass)
+        include ../common/header/header
+        block before-content
+        main(class=mainContentClass)
+            block main-content
+        block after-content
+
+        include ../common/footer

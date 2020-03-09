@@ -8,7 +8,10 @@
 @import "base/fonts";
 // - Общее стили для всех страниц 
 @import "base/main";
-    
+
+@import "base/content";
+
+
 @import "utils/icon";
 @import "block/toggle";
 
@@ -22,9 +25,15 @@
 
 @import "common/bread-crumbs"
 
+
 .alert, .warning
     ul, p
         margin-right: 0
         margin-left: 0
         padding-bottom: 0
 
+@import "elements/reviews"
+@import "elements/prodcard"
+
+.--active
+    display: block

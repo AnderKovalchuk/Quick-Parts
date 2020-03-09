@@ -1,0 +1,263 @@
+
+.prodcard
+    &__iner
+        display: grid
+        grid-template-columns: 1fr 0.8fr
+        gap: 30px
+        margin-bottom: 30px
+        @media screen and (max-width: $smDesktopWidth)
+            grid-template-columns: 1fr 1fr
+        @media screen and (max-width: $tableWidth)
+            grid-template-columns: 1fr
+            gap: 0
+    
+    &__product-image-block
+        img
+            width: 100%
+    
+    &__buy-information-block
+        display: flex
+        flex-direction:  column
+        justify-content: center
+    &__product-name
+        margin-bottom: 15px
+        font-family: $title-font 
+        font-size: 2em
+        font-weight: bold
+        line-height: 1.3
+        letter-spacing: normal
+        color: $color-text-acsent
+        @media screen and (max-width: $tableWidth)
+            display: none
+            text-align: center
+            width: 80%
+            margin: 15px auto
+        &--mobile
+            display: none
+            @media screen and (max-width: $tableWidth)
+                display: block
+    &__availability
+        margin-bottom: 15px
+        &--out-of-stock
+            color: $color-acsent-first
+            font-weight: bold
+    &__characteristics
+        span
+            font-weight: bold
+            color: $color-text-acsent
+            padding-right: 5px
+        a
+            text-decoration: none
+            color: $color-text-main 
+            &:hover
+                text-decoration: underline
+                color: $color-text-acsent 
+    &__cost
+        margin: 30px 0
+        font-size: 1.3em
+    &__price
+        font-size: 1.2em
+        font-family: $title-font
+        color: $color-text-acsent
+        font-weight: bold
+        &--old
+            padding-right: 15px
+            color: $color-light-third
+            font-size: 1em
+            text-decoration: line-through $color-acsent-first
+    &__action
+        display: grid
+        gap: 15px
+        grid-template-columns: 1fr 1fr
+        @media screen and (max-width: $tableWidth)
+            grid-template-columns: 1fr 0.5fr
+        > .button
+            width: 100%
+            @media screen and (max-width: $tableWidth)
+                &.button--active
+                    grid-row-start: 1
+                &.button--auxiliary
+                    grid-column-start: 1
+                    grid-column-end: 3
+    &__quantity
+        grid-column-start: 1
+        grid-column-end: 3
+        @media screen and (max-width: $tableWidth)
+            grid-column-start: 2
+
+    &__about-product-block
+    &__content-header
+        border-bottom: 1px solid $color-text-acsent
+        @include flex-horizontal-align
+        &--mobile-only
+            display: none
+            @media screen and (max-width: $tableWidth)
+                display: flex
+    &__toggle
+        display: none
+        width: 35px
+        padding: 10px
+        @media screen and (max-width: $tableWidth)
+            display: block
+    &__title-content
+        padding: 5px 15px
+        font-family: $title-font 
+        font-size: 1.2em
+        font-weight: bold
+        color: $color-text-acsent
+    &__content-iner
+        padding: 5px 15px
+        @media screen and (max-width: $tableWidth)
+            display: none
+            padding: 15px 15px 30px 15px
+        &--hidden
+            display: none
+        &--open
+            display: block
+            border-bottom: 1px solid $color-text-acsent        
+
+    &__tab-content
+        display: flex
+        border-bottom: 1px solid $color-text-acsent
+        @media screen and (max-width: $tableWidth)
+            display: none
+        > li
+            margin-bottom: -1px
+            cursor: pointer
+        &--active
+            z-index: 10
+            border: 1px solid $color-text-acsent
+            border-bottom: 1px solid #fff
+        &--show
+            display: block
+        &--hidden
+            display: none
+    &__property-block
+        @media screen and (max-width: $tableWidth)
+            grid-row-start: 4
+            margin-top: 30px
+    &__property-item
+        display: flex
+        padding: 5px
+        font-weight: bold
+        color: $color-text-acsent 
+        border-bottom: 1px solid $color-text-acsent 
+        span
+            display: block
+            width: 30%
+            margin-left: auto
+            font-weight: normal
+            text-align: center
+
+    
+
+
+.quantity
+    font-family: $title-font
+    font-weight: bold
+    font-size: 1.2em
+    display: flex
+    
+    &__input
+        padding: 5px 10px
+        font-size: 1em
+        border: 1px solid $color-light-third
+        border-right: none
+        border-left: none
+        text-align: center
+        &::-webkit-inner-spin-button
+            -webkit-appearance: none
+    &__button
+        border: 1px solid $color-light-third
+        padding: 5px 12px
+        &--minus::after
+            content: '-'
+        &--plus::after
+            content: '+'
+        &:hover
+            background-color: $color-light-first 
+
+    
+
+.prodcard -2
+    &__iner
+        display: grid
+        grid-template-columns: 1fr 0.8fr
+        gap: 30px
+        margin-bottom: 30px
+        @media screen and (max-width: $smDesktopWidth)
+            grid-template-columns: 1fr 1fr
+        @media screen and (max-width: $tableWidth)
+            grid-template-columns: 1fr
+
+
+    &__product-image
+        img
+            width: 100%
+    &__buy-block
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+    &__description-block
+
+    &__product-name
+        margin-bottom: 15px
+        font-size: 1.5em
+        letter-spacing: normal
+    &__availability
+        margin-bottom: 15px
+    &__cost
+        margin: 30px 0
+        font-size: 1.3em
+    &__price
+        font-size: 1.2em
+        font-family: $title-font
+        color: $color-text-acsent
+        font-weight: bold
+        &--old
+            padding-right: 15px
+            color: $color-light-third
+            font-size: 1em
+            text-decoration: line-through $color-acsent-first
+    &__action 
+        > * 
+            width: 40%
+
+    &__tub-title
+        display: flex
+        font-family: $title-font 
+        font-size: 1.1em
+        font-weight: bold
+        color: $color-text-acsent
+        border-bottom: 1px solid $color-text-acsent
+        @media screen and (max-width: $tableWidth)
+            display: none
+    &__tub-item
+        padding: 5px 15px
+        margin-bottom: -1px
+        &--active
+            border: 1px solid $color-text-acsent
+            border-bottom:  1px solid #fff
+    
+    &__title
+        margin-bottom: 15px
+        padding: 5px 15px 6px 15px
+        font-weight: bold
+        color: #333
+        border-bottom: 1px solid $color-text-acsent
+        h2
+            font-size: 1.1em
+    &__property-item
+        display: flex
+        margin: 5px 15px
+        padding: 5px
+        font-weight: bold
+        color: $color-text-acsent 
+        border-bottom: 1px solid $color-text-acsent 
+        span
+            display: block
+            width: 30%
+            margin-left: auto
+            font-weight: normal
+            text-align: center
