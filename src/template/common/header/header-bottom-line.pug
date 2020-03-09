@@ -1,4 +1,4 @@
-mixin header-bottom-line(open= false)
+mixin header-bottom-line(open= false, catalogVeaw= false)
     .header__bottom-line
         .wrapper
             .header__mobile-addition-menu                      
@@ -9,12 +9,8 @@ mixin header-bottom-line(open= false)
                 ul.header__navigation-list
                     li.header__navigation-list--catalog
                         a(href="#") Каталог
-                        if open
-                            .catalog-menu.catalog-menu--open
-                                include ./header-catalog-menu
-                        else
-                            .catalog-menu
-                                include ./header-catalog-menu
+                        .catalog-menu(class!=attributes.class)
+                            include ./header-catalog-menu
                     +menu-item('Главная')
                     +menu-item('О нас')
                     +menu-item('Контакты')

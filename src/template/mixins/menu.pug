@@ -5,7 +5,7 @@ mixin menu-item(text, link='#')
             block
 
 mixin menu-catalog-item(text, img='', link='#')
-    li.catalog-menu__item
+    li.catalog-menu__item(class!=attributes.class)
         span
             if img==''
                 img(src="/assets/img/detal.svg", alt="").catalog-menu__icon
