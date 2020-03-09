@@ -1,0 +1,7 @@
+mixin catalog-category-card(title, image='')
+    .catalog-category-card
+        a(href="#")
+            if image!=''
+                figure
+                    img(src= image, alt= title)
+            h3.catalog-category-card__title= title

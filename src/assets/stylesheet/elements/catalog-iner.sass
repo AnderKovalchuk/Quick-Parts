@@ -1,0 +1,13 @@
+.catalog-iner
+    display: grid
+    gap: 30px
+    &--3
+        grid-template-columns: 1fr 1fr 1fr
+    &--4
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        @media screen and (max-width: $smDesktopWidth)
+            grid-template-columns: 1fr 1fr
+        @media screen and (max-width: $tableWidth)
+            grid-template-columns: 1fr 1fr
+        @media screen and (max-width: $phoneWidth)
+            grid-template-columns: 1fr 
