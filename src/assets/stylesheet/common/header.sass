@@ -108,6 +108,7 @@ $catalog-menu-size-DesktopWidth: 250px
     display: none
     position: absolute
     width: $catalog-menu-size-DesktopWidth
+    font-family: $title-font
     background-color: $color-light-first
     z-index: 51
     @media screen and (max-width: $tableWidth)
@@ -126,6 +127,8 @@ $catalog-menu-size-DesktopWidth: 250px
                 background-color: $color-light-second
                 .catalog-menu__sub-menu 
                     display: block
+        &--active
+            background-color: $color-light-second
     &__icon
     &__link
         width: 95%
@@ -167,15 +170,19 @@ $catalog-menu-size-DesktopWidth: 250px
         @media screen and (min-width: $smDesktopWidth)
             display: block
     &--catalog-view
-            @media screen and (min-width: $tableWidth)
-                display: block
-                .catalog-menu
-                    &__sub-menu
-                        position: relative
-                        left: 0
-                        width: 100%
-                    &__item:hover .toggle-menu
-                        transform: rotate(90deg)
+        display: none
+        @media screen and (min-width: $tableWidth)
+            display: block
+            position: relative
+            .catalog-menu
+                &__sub-menu
+                    position: relative
+                    left: 0
+                    width: 100%
+                    &--open
+                        border-bottom: none
+                &__item:hover .toggle-menu
+                    transform: rotate(90deg)
                         
 
 .header-phone
