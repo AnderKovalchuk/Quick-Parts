@@ -1,0 +1,27 @@
+extends ../layout/page-with-sidebar
+include ../mixins/catalog-category-card
+
+block variables
+    - var title = 'Каталог';
+    - var pageClass = 'home-general';
+
+block sidebar
+    .catalog-menu.catalog-menu--catalog-view
+        include ../common/header/header-catalog-menu
+
+block  main-content
+    header.catalog-header
+        h1.catalog-header__title CUMMINS
+    .catalog-iner.catalog-iner--4
+        +catalog-category-card("Головка блока цилиндров", "/assets/img/catalog_category_card_1.jpg")
+        +catalog-category-card("Коленвал", "/assets/img/catalog_category_card_2.jpg")
+        +catalog-category-card("Головка блока цилиндров", "")
+        +catalog-category-card("Коленвал", "/assets/img/catalog_category_card_2.jpg")
+        +catalog-category-card("Головка блока цилиндров", "/assets/img/catalog_category_card_1.jpg")
+        +catalog-category-card("Головка блока цилиндров", "/assets/img/catalog_category_card_1.jpg")
+        +catalog-category-card("Коленвал", "/assets/img/catalog_category_card_2.jpg")
+        +catalog-category-card("Головка блока цилиндров", "")
+        +catalog-category-card("Головка блока цилиндров", "/assets/img/catalog_category_card_1.jpg")
+        +catalog-category-card("Головка блока цилиндров", "")
+        +catalog-category-card("Головка блока цилиндров", "/assets/img/catalog_category_card_1.jpg")
+        
