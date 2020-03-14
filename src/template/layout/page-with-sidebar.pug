@@ -14,11 +14,11 @@ html(lang='ru')
 
     body(class=pageClass)
         include ../common/header/header
+        block before-content
         .wrapper.sidebar
             .sidebar__left
                 block sidebar
             .sidebar__main
-                block before-content
                 main(class=mainContentClass)
                     block main-content
                 block after-content

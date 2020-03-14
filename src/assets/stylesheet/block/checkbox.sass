@@ -1,0 +1,23 @@
+.checkbox
+    font-family: $title-font
+    font-size: 1em
+    color: $color-text-acsent
+    padding: 5px 0
+    user-select: none
+    input[type="checkbox"]
+        display: none
+        &:checked ~ label::before
+            background-color: $color-acsent-first
+            border-color: $color-light-third 
+    label
+        display: block
+        width: 100%
+        cursor: pointer
+    label::before
+        display: inline-block
+        content: ''
+        width: 15px
+        height: 15px
+        margin-right: 10px
+        border: 1px solid $color-text-acsent
+    

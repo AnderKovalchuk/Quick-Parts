@@ -1,0 +1,40 @@
+.catalog-sidebar
+    background-color: $color-light-first
+    padding: 15px 20px
+    z-index: 10
+    @media screen and (max-width: $tableWidth)
+        max-width: 400px
+        width: 100%
+        position: fixed
+        left: 0
+        top: 0
+        bottom: 0
+        overflow-y: auto
+        transform-origin: 0% 0%
+        transform: translate(-100%, 0)
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+    &--active
+        transform: none
+    &__header
+        @include flex-horizontal-align
+        margin-bottom: 10px
+    &__toggle
+        width: 20px
+        padding: 5px
+    &__filter-block
+        padding-bottom: 10px
+    &__filter-block:not(:last-child)
+        margin-bottom: 15px
+        border-bottom: 1px solid $color-text-acsent
+    &__mobile-addition-menu
+        display: none
+        text-align: right
+        @media screen and (max-width: $tableWidth)
+            display: block
+    &__mobile-menu-close 
+        width: 20px
+        content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48cGF0aCBkPSJNMTkzLjk0IDI1NkwyOTYuNSAxNTMuNDRsMjEuMTUtMjEuMTVjMy4xMi0zLjEyIDMuMTItOC4xOSAwLTExLjMxbC0yMi42My0yMi42M2MtMy4xMi0zLjEyLTguMTktMy4xMi0xMS4zMSAwTDE2MCAyMjIuMDYgMzYuMjkgOTguMzRjLTMuMTItMy4xMi04LjE5LTMuMTItMTEuMzEgMEwyLjM0IDEyMC45N2MtMy4xMiAzLjEyLTMuMTIgOC4xOSAwIDExLjMxTDEyNi4wNiAyNTYgMi4zNCAzNzkuNzFjLTMuMTIgMy4xMi0zLjEyIDguMTkgMCAxMS4zMWwyMi42MyAyMi42M2MzLjEyIDMuMTIgOC4xOSAzLjEyIDExLjMxIDBMMTYwIDI4OS45NCAyNjIuNTYgMzkyLjVsMjEuMTUgMjEuMTVjMy4xMiAzLjEyIDguMTkgMy4xMiAxMS4zMSAwbDIyLjYzLTIyLjYzYzMuMTItMy4xMiAzLjEyLTguMTkgMC0xMS4zMUwxOTMuOTQgMjU2eiIvPjwvc3ZnPg==')
+        
+    .button
+        display: block
+        margin: 0 auto

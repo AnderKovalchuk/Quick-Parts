@@ -1,0 +1,47 @@
+extends ../layout/page-with-sidebar
+
+include ../mixins/catalog-category-card
+include ../elements/catalog/catalog-sidebar-filter-block
+
+block variables
+    - var title = 'Каталог';
+    - var pageClass = 'home-general';
+
+block before-content
+    +bread-crumbs
+
+block sidebar
+    .catalog-sidebar
+        .catalog-sidebar__mobile-addition-menu                      
+            a(href="#").catalog-sidebar__mobile-menu-close 
+        +catalog-sidebar-filter-block('Состояние', ['Новое', 'БУ'])
+        +catalog-sidebar-filter-block('Тип запчасти', ['Аналог', 'Оригинал'])
+        +catalog-sidebar-filter-block('Производитель', ['Bosch', 'Cummins', 'DCEC', 'Foton', 'Gates', 'KMP Brand'])
+        button.button.button--auxiliary Применить фильтр
+
+block  main-content
+    header.catalog-header
+        .catalog-header__first-line
+            h1.catalog-header__title CUMMINS, Блок цилиндров
+            a.catalog-header__filter 
+                span Фильтр
+                i
+            select.catalog-header__sorting-select
+                option Дешевые
+                option Дорогие
+            
+    main.catalog-iner.catalog-iner--3
+        +product-card('Масляный насос CASE 860/8840/4308 DAF45/55 YUTONG ZK-6737D/ZK6831', '3 000 грн')
+        +product-card('Масляный насос CASE 860/8840/4308', '3 000 грн', '/assets/img/product_img_2.jpg', '5 000 грн')
+        +product-card('Масляный насос CASE 860/8840/4308 DAF45/55 YUTONG ZK-6737D/ZK6831', '3 000 грн', '', '5 687 грн')
+        +product-card('Масляный насос CASE 860/8840/4308', '3 000 грн', '/assets/img/product_img_2.jpg', '5 000 грн', 'f')
+        +product-card('Масляный насос CASE 860/8840/4308 DAF45/55 YUTONG ZK-6737D/ZK6831')
+        +product-card('Масляный насос CASE 860/8840/4308 DAF45/55 YUTONG ZK-6737D/ZK6831')
+        +product-card('Масляный насос CASE 860/8840/4308 DAF45/55 YUTONG ZK-6737D/ZK6831', '3 000 грн')
+        +product-card('Масляный насос CASE 860/8840/4308', '3 000 грн', '/assets/img/product_img_2.jpg', '5 000 грн')
+        +product-card('Масляный насос CASE 860/8840/4308 DAF45/55 YUTONG ZK-6737D/ZK6831', '3 000 грн', '', '5 687 грн')
+        +product-card('Масляный насос CASE 860/8840/4308', '3 000 грн', '/assets/img/product_img_2.jpg', '5 000 грн', 'f')
+        +product-card('Масляный насос CASE 860/8840/4308 DAF45/55 YUTONG ZK-6737D/ZK6831')
+        +product-card('Масляный насос CASE 860/8840/4308 DAF45/55 YUTONG ZK-6737D/ZK6831')
+    
+

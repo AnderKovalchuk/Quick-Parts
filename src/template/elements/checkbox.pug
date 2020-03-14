@@ -1,0 +1,8 @@
+mixin checkbox(text)
+    - var elementID = Math.random()
+    input(type="checkbox" id= elementID)
+    label(for= elementID)= text
+
+mixin checkbox-li(text)
+    li.checkbox(class!=attributes.class)
+        +checkbox(text)

@@ -1,0 +1,10 @@
+include ../checkbox
+
+mixin catalog-sidebar-filter-block(title, items)
+    .catalog-sidebar__filter-block
+        .catalog-sidebar__header
+            h3= title
+            i.toggle-menu.toggle-menu--black.toggle-menu--open.catalog-sidebar__toggle
+        ul
+            each item in items
+                +checkbox-li(item)
